@@ -1,4 +1,6 @@
 class Sort
+  require 'benchmark'
+
   def self.insertion_sort(arr, index = 1)
     return arr unless index < arr.size
     inherit_index = index
@@ -24,4 +26,7 @@ end
 
 ARR = [5, 10, -1, 121, 13, 1, 7]
 
-puts Sort.qsort(ARR)
+Benchmark.bm do |x|
+  x.report { p 'qsort'; p Sort.qsort(ARR) }
+  x.report { p 'insertion_sort'; p Sort.insertion_sort(ARR) }
+end

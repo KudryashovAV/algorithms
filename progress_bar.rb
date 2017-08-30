@@ -4,7 +4,7 @@ class ProgressBar
     puts "Start at #{start_time.strftime("%a, %e %b %Y %H:%M:%S")}"
     collection = (1..100000000)
     amount = collection.size.to_f
-    progress_count, progress = 0, "ᗧ" + "" * 91
+    progress_count, progress = 0, "ᗧ" + "" * 91 #♥
     collection.each do |i|
       progress_count += 1
       percent = progress_count / amount * 100
